@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>قصص — إضافة قصة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="page-form">
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon">📖</span>
+        <span class="logo-text">قِصَص</span>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html" class="nav-link">الرئيسية</a>
+        <a href="add.html" class="nav-link btn-add active">+ أضف قصة</a>
+      </div>
+      <button class="burger" id="burger">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="../index.html">الرئيسية</a>
+      <a href="add.html">+ أضف قصة</a>
+    </div>
+  </nav>
+
+  <div class="form-page-wrapper">
+    <div class="form-card">
+      <div class="form-header">
+        <h1 id="formTitle">✍️ أضف قصة جديدة</h1>
+        <p id="formSubtitle">شارك حكايتك مع العالم</p>
+      </div>
+
+      <form id="storyForm" novalidate>
+        <input type="hidden" id="storyId" />
+
+        <div class="form-group">
+          <label for="storyTitle">عنوان القصة <span class="req">*</span></label>
+          <input type="text" id="storyTitle" placeholder="أدخل عنواناً جذاباً..." maxlength="100" required />
+          <span class="char-count" id="titleCount">0/100</span>
+        </div>
+
+        <div class="form-group">
+          <label for="storyCategory">التصنيف <span class="req">*</span></label>
+          <div class="select-wrapper">
+            <select id="storyCategory" required>
+              <option value="" disabled selected>اختر تصنيفاً...</option>
+              <option value="إسلامية">🕌 إسلامية</option>
+              <option value="تاريخية">🏛️ تاريخية</option>
+              <option value="رومانسية">❤️ رومانسية</option>
+              <option value="مغامرات">⚔️ مغامرات</option>
+              <option value="خيال علمي">🚀 خيال علمي</option>
+              <option value="أطفال">🌟 أطفال</option>
+              <option value="رعب">👻 رعب</option>
+              <option value="اجتماعية">🤝 اجتماعية</option>
+              <option value="أخرى">📌 أخرى</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="storyExcerpt">مقتطف / وصف مختصر</label>
+          <input type="text" id="storyExcerpt" placeholder="جملة أو اثنتان تصف القصة..." maxlength="200" />
+          <span class="char-count" id="excerptCount">0/200</span>
+        </div>
+
+        <div class="form-group">
+          <label for="storyContent">محتوى القصة <span class="req">*</span></label>
+          <div class="editor-toolbar">
+            <button type="button" onclick="formatText('bold')" title="عريض">𝐁</button>
+            <button type="button" onclick="formatText('italic')" title="مائل">𝐼</button>
+            <button type="button" onclick="insertNewLine()" title="فقرة جديدة">¶</button>
+          </div>
+          <textarea id="storyContent" placeholder="اكتب قصتك هنا... كن مبدعاً!" rows="14" required></textarea>
+          <span class="char-count" id="contentCount">0 كلمة</span>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary btn-submit" id="submitBtn">
+            <span class="btn-icon">💾</span>
+            <span id="submitText">نشر القصة</span>
+          </button>
+          <a href="../index.html" class="btn-secondary">إلغاء</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>قِصَص © <span id="year"></span></p>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/form.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

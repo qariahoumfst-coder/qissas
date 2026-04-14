@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>قصص — منصة الحكايات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">📖</span>
+        <span class="logo-text">قِصَص</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link active">الرئيسية</a>
+        <a href="pages/add.html" class="nav-link btn-add">+ أضف قصة</a>
+      </div>
+      <button class="burger" id="burger" aria-label="القائمة">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">الرئيسية</a>
+      <a href="pages/add.html">+ أضف قصة</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-sub">اكتشف · اقرأ · شارك</p>
+      <h1 class="hero-title">عالم من<br /><em>الحكايات</em></h1>
+      <p class="hero-desc">منصة عربية لنشر وقراءة القصص بكل أنواعها — إسلامية، تاريخية، رومانسية وأكثر.</p>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="ابحث عن قصة..." autocomplete="off" />
+        <button id="searchBtn" aria-label="بحث">🔍</button>
+      </div>
+    </div>
+    <div class="hero-deco"></div>
+  </header>
+
+  <!-- CATEGORIES -->
+  <section class="categories-section">
+    <div class="container">
+      <h2 class="section-title">التصنيفات</h2>
+      <div class="categories-row" id="categoriesRow">
+        <button class="cat-btn active" data-cat="all">الكل</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORIES GRID -->
+  <main class="stories-section">
+    <div class="container">
+      <div class="stories-header">
+        <h2 class="section-title" id="storiesTitle">أحدث القصص</h2>
+        <span class="stories-count" id="storiesCount"></span>
+      </div>
+      <div class="stories-grid" id="storiesGrid">
+        <!-- Cards injected by JS -->
+      </div>
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <div class="empty-icon">📜</div>
+        <p>لا توجد قصص بعد.</p>
+        <a href="pages/add.html" class="btn-primary">أضف أول قصة</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>قِصَص © <span id="year"></span> — منصة الحكايات العربية</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>قصص — اقرأ القصة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="page-read">
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-icon">📖</span>
+        <span class="logo-text">قِصَص</span>
+      </a>
+      <div class="nav-links">
+        <a href="../index.html" class="nav-link">الرئيسية</a>
+        <a href="add.html" class="nav-link btn-add">+ أضف قصة</a>
+      </div>
+      <button class="burger" id="burger">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="../index.html">الرئيسية</a>
+      <a href="add.html">+ أضف قصة</a>
+    </div>
+  </nav>
+
+  <div class="read-wrapper" id="readWrapper">
+    <!-- Injected by JS -->
+    <div class="read-loading">جارٍ التحميل...</div>
+  </div>
+
+  <!-- DELETE MODAL -->
+  <div class="modal-overlay" id="deleteModal" style="display:none;">
+    <div class="modal-box">
+      <div class="modal-icon">🗑️</div>
+      <h3>حذف القصة</h3>
+      <p>هل أنت متأكد أنك تريد حذف هذه القصة؟ لا يمكن التراجع عن هذا الإجراء.</p>
+      <div class="modal-actions">
+        <button class="btn-danger" id="confirmDelete">نعم، احذف</button>
+        <button class="btn-secondary" id="cancelDelete">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>قِصَص © <span id="year"></span></p>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/read.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
